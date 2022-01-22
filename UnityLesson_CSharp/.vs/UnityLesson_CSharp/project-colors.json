@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4e305b09-6b5f-4297-b9fd-4328685d1d14": {
+      "ProjectGuid": "4e305b09-6b5f-4297-b9fd-4328685d1d14",
+      "DisplayName": "UnityLesson_CSharp_ProgramClass",
+      "ColorIndex": 0
+    },
+    "0f565159-3e64-400d-9b71-af13e86c657c": {
+      "ProjectGuid": "0f565159-3e64-400d-9b71-af13e86c657c",
+      "DisplayName": "UnityLesson_CSharp_ProgramClass_Dotnet5",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    },
+    "f1a54b52-648d-4aaf-8142-2137b4fafd5e": {
+      "ProjectGuid": "f1a54b52-648d-4aaf-8142-2137b4fafd5e",
+      "DisplayName": "UnityLesson_CSharp_ProgramClass",
+      "ColorIndex": 2
+    },
+    "12fa3dc5-e4a3-4622-8d6b-e10d20e9467d": {
+      "ProjectGuid": "12fa3dc5-e4a3-4622-8d6b-e10d20e9467d",
+      "DisplayName": "UnityLesson_CSharp_ProgramClass_Dotnet5",
+      "ColorIndex": 3
+    },
+    "17f9bd2f-491b-4af1-9213-362879729d68": {
+      "ProjectGuid": "17f9bd2f-491b-4af1-9213-362879729d68",
+      "DisplayName": "UnityLesson_CSharp_Variable",
+      "ColorIndex": 4
+    },
+    "032e6f68-7703-4ea3-bc9e-7b2124e03311": {
+      "ProjectGuid": "032e6f68-7703-4ea3-bc9e-7b2124e03311",
+      "DisplayName": "UnityLesson_CSharp_If",
+      "ColorIndex": 5
+    },
+    "3e042b45-dbe9-4a9f-b5c1-aa5d855b7658": {
+      "ProjectGuid": "3e042b45-dbe9-4a9f-b5c1-aa5d855b7658",
+      "DisplayName": "UnityLesson_CSharp_Method",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}
