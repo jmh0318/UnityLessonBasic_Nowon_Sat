@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\UnityLesson_CSharp_WhileLoop.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\UnityLesson_CSharp_WhileLoop.csproj",
       "projectName": "UnityLesson_CSharp_WhileLoop",
-      "projectPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\UnityLesson_CSharp_WhileLoop.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\UnityLesson_CSharp_WhileLoop.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLesson_CSharp_WhileLoop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

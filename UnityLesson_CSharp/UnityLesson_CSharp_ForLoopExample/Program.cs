@@ -35,9 +35,12 @@ namespace UnityLesson_CSharp_ForLoopExample
     static private bool GetRandomBool()
     {
         Random random = new Random();
-        int randomInt = random.Next(0, 2); // minValue ~ maxValue - 1
-        bool randomBool = Convert.ToBoolean(randomInt);
-        return randomBool;
+        //int randomInt = random.Next(0, 2); // minValue ~ maxValue - 1
+        //bool randomBool = Convert.ToBoolean(randomInt);
+        //bool randomBool = random.Next(0, 2) < 1;
+        bool randomBool = random.Next(0f, 1f) < 0.5f;
+
+            return randomBool;
     }
 }
 

@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityLesson_CSharp_ForLoop"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityLesson_CSharp_ForLoopExample", "UnityLesson_CSharp_ForLoopExample\UnityLesson_CSharp_ForLoopExample.csproj", "{7FDD8957-9505-4DAB-84A5-20E55B439674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityLesson_CSharp_Collection", "UnityLesson_CSharp_Collection\UnityLesson_CSharp_Collection.csproj", "{857D3530-6B2A-4E09-A7F0-E248923ABE25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityLesson_CSharp_Collection", "UnityLesson_CSharp_Collection\UnityLesson_CSharp_Collection.csproj", "{857D3530-6B2A-4E09-A7F0-E248923ABE25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityLesson_CSharp_EnumAndSwitchCase", "UnityLesson_CSharp_EnumAndSwitchCase\UnityLesson_CSharp_EnumAndSwitchCase.csproj", "{75098E07-3DA0-4C6C-A198-B4C770F1FB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityLesson_CSharp_Structure", "UnityLesson_CSharp_Structure\UnityLesson_CSharp_Structure.csproj", "{2E98269F-9587-4379-B984-CD9158F091FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{857D3530-6B2A-4E09-A7F0-E248923ABE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{857D3530-6B2A-4E09-A7F0-E248923ABE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{857D3530-6B2A-4E09-A7F0-E248923ABE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75098E07-3DA0-4C6C-A198-B4C770F1FB0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75098E07-3DA0-4C6C-A198-B4C770F1FB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75098E07-3DA0-4C6C-A198-B4C770F1FB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75098E07-3DA0-4C6C-A198-B4C770F1FB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E98269F-9587-4379-B984-CD9158F091FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E98269F-9587-4379-B984-CD9158F091FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E98269F-9587-4379-B984-CD9158F091FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E98269F-9587-4379-B984-CD9158F091FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

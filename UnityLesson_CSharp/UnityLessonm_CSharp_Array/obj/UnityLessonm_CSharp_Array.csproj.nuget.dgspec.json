@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj",
         "projectName": "UnityLessonm_CSharp_Array",
-        "projectPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\UnityLessonm_CSharp_Array.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\UnityLessonBasic_Nowon_Sat\\UnityLesson_CSharp\\UnityLessonm_CSharp_Array\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
