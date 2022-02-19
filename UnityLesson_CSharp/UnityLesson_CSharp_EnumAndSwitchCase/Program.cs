@@ -41,6 +41,8 @@ namespace UnityLesson_CSharp_EnumAndSwitchCase
             Warrior warrior = new Warrior();
             Console.WriteLine("생성할 전사의 이름을 입력하세요:");
             warrior.name = Console.ReadLine();
+
+            // if 분기
             if (createMotion == e_PlayerState.Idle)
             {
                 // do nothing
@@ -147,7 +149,7 @@ namespace UnityLesson_CSharp_EnumAndSwitchCase
         }
         public void Home()
         {
-            Console.WriteLine($"{name} (이)가 집감");
+            Console.WriteLine($"{name} (이)가 귀환함");
         }
     }
 }
