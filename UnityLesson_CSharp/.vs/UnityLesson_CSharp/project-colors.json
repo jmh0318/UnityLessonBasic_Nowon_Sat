@@ -90,7 +90,17 @@
       "ProjectGuid": "420df938-b4d1-4d99-84e9-c44cd228ff1c",
       "DisplayName": "UnityLesson_CSharp_delegate",
       "ColorIndex": 0
+    },
+    "f3b84bbf-6b0e-4af9-8afb-af0d56c302ef": {
+      "ProjectGuid": "f3b84bbf-6b0e-4af9-8afb-af0d56c302ef",
+      "DisplayName": "UniltyLesson_CSharp_Game",
+      "ColorIndex": 1
+    },
+    "4d2f9a8d-02e2-4159-b93b-b7ef84598a0b": {
+      "ProjectGuid": "4d2f9a8d-02e2-4159-b93b-b7ef84598a0b",
+      "DisplayName": "DiceGame",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
