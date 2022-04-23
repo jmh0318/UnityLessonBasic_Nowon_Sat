@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-
     private GroundDetector groundDetector;
+    public bool invisiable; // 무적
     public float jumpForce;
     public float moveSpeed;
     private float moveInputOffset = 0.1f;
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public FallState fallState;
     public AttackState attackState;
     public DashAttackState dashAttackState;
+    public HurtState hurtState;
+    public DieState dieState;
 
     [Header("애니메이션")]
     private Animator animator;
@@ -47,12 +49,16 @@ public class PlayerController : MonoBehaviour
     private float dashAttackTime;
     private float jumpCastingTime = 0.1f;
     private float jumpCastingTimer;
+    private float hurtTime;
+    private float dieTime;
 
     [Header("Physics")]
     public Vector2 attackBoxCastCenter;
     public Vector2 attackBoxCastSize;
     public float attackKnockbackForce;
     public float attackKnockbackTime;
+    RaycastHit2D[] hits; // 타겟들
+
 
     public LayerMask enemyLayer;
 
@@ -62,7 +68,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         groundDetector = GetComponent<GroundDetector>();
+        // initialize animation time
         attackTime = GetAnimationTime("Attack");
+        dashAttackTime = GetAnimationTime("DashAttack");
+        hurtTime = GetAnimationTime("Hurt");
+        dieTime = GetAnimationTime("Die");
     }
 
     private void Update()
@@ -92,12 +102,17 @@ public class PlayerController : MonoBehaviour
 
         // 점프 키
         if (Input.GetKey(KeyCode.LeftAlt))
-        {
+        { 
             if (groundDetector.isDetected &&
                state != PlayerState.Jump &&
                state != PlayerState.Fall)
             {
                 ChangePlayerState(PlayerState.Jump);
+            }
+        
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                groundDetector.IgnoreDectectedGround();
             }
         }
 
@@ -150,6 +165,12 @@ public class PlayerController : MonoBehaviour
             case PlayerState.DashAttack:
                 dashAttackState = DashAttackState.Idle;
                 break;
+            case PlayerState.Hurt:
+                hurtState = HurtState.Idle;
+                break;
+            case PlayerState.Die:
+                dieState = DieState.Idle;
+                break;
             default:
                 break;
         }
@@ -177,6 +198,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.DashAttack:
                 dashAttackState = DashAttackState.Prepare;
+                break;
+            case PlayerState.Hurt:
+                hurtState = HurtState.Prepare;
+                break;
+            case PlayerState.Die:
+                dieState = DieState.Prepare;
                 break;
             default:
                 break;
@@ -207,6 +234,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.DashAttack:
                 UpdateDashAttackState();
+                break;
+            case PlayerState.Hurt:
+                UpdateHurtState();
+                break;
+            case PlayerState.Die:
+                UpdateDieState();
                 break;
             default:
                 break;
@@ -343,10 +376,11 @@ public class PlayerController : MonoBehaviour
                                                           0,
                                                           enemyLayer);
                     if (hit.collider != null)
-                    {
+                    {                       
                         hit.collider.GetComponent<EnemyController>().Knockback(new Vector2(direction, 0),
                                                                                attackKnockbackForce,
                                                                                attackKnockbackTime);
+                        hit.collider.GetComponent<Enemy>().hp -= 10;
                     }
 
                     attackState++;
@@ -380,34 +414,47 @@ public class PlayerController : MonoBehaviour
                 isMoveable = false;
                 animator.Play("DashAttack");
                 animationTimer = dashAttackTime;
-                dashAttackState++;
-                break;
-            case DashAttackState.Casting:
-                if (animationTimer < dashAttackTime / 2)
-                {
-                    Vector2 tmpCenter = new Vector2(attackBoxCastCenter.x * direction,
+
+                // 적 캐스팅
+                Vector2 tmpCenter = new Vector2(attackBoxCastCenter.x * direction,
                                                     attackBoxCastCenter.y)
                                                     + rb.position;
 
-                    RaycastHit2D hit = Physics2D.BoxCast(tmpCenter,
-                                                          attackBoxCastSize,
-                                                          0,
-                                                          Vector2.zero,
-                                                          0,
-                                                          enemyLayer);
-                    if (hit.collider != null)
+                hits = Physics2D.BoxCastAll(tmpCenter,
+                                            attackBoxCastSize,
+                                            0,
+                                            Vector2.zero,
+                                            1,
+                                            enemyLayer);
+
+
+                dashAttackState++;
+                break;
+            case DashAttackState.Casting:
+                if (animationTimer < dashAttackTime * 2 / 3)
+                {
+                    foreach (var hit in hits)
                     {
-                        hit.collider.GetComponent<EnemyController>().Knockback(new Vector2(direction, 0),
-                                                                               attackKnockbackForce,
-                                                                               attackKnockbackTime);
+                        if (hit.collider != null)
+                        {
+                            hit.collider.GetComponent<EnemyController>().Knockback(new Vector2(direction, 0),
+                                                                                   attackKnockbackForce,
+                                                                                   attackKnockbackTime);
+                            hit.collider.GetComponent<Enemy>().hp -= 10;
+                        }
                     }
 
+                    move.x = 0;
                     dashAttackState++;
                 }
                 else
+                {
+                    move.x = direction * 3f;
                     animationTimer -= Time.deltaTime;
+                }
                 break;
             case DashAttackState.OnAction:
+
                 if (animationTimer < 0)
                 {
                     dashAttackState++;
@@ -417,6 +464,62 @@ public class PlayerController : MonoBehaviour
                 break;
             case DashAttackState.Finish:
                 ChangePlayerState(PlayerState.Idle);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateHurtState()
+    {
+        switch (hurtState)
+        {
+            case HurtState.Idle:
+                break;
+            case HurtState.Prepare:
+                animator.Play("Hurt");
+                animationTimer = hurtTime;
+                hurtState++;
+                break;
+            case HurtState.Casting:
+                hurtState++;
+                break;
+            case HurtState.OnAction:
+                if (animationTimer < 0)
+                    hurtState++;
+                else
+                    animationTimer -= Time.deltaTime;
+                break;
+            case HurtState.Finish:
+                ChangePlayerState(PlayerState.Idle);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateDieState()
+    {
+        switch (dieState)
+        {
+            case DieState.Idle:
+                break;
+            case DieState.Prepare:
+                animator.Play("Die");
+                animationTimer = dieTime;
+                dieState++;
+                break;
+            case DieState.Casting:
+                dieState++;
+                break;
+            case DieState.OnAction:
+                if (animationTimer < 0)
+                    dieState++;
+                else
+                    animationTimer -= Time.deltaTime;
+                break;
+            case DieState.Finish:
+                // 암것도 안할거니까 건드리지마 제발
                 break;
             default:
                 break;
@@ -435,6 +538,44 @@ public class PlayerController : MonoBehaviour
         return time;
     }
 
+    public void Knockback(Vector2 forceVec, float time)
+    {
+        if (invisiable == false &&
+            (state == PlayerState.Idle ||
+             state == PlayerState.Run ||
+             state == PlayerState.Jump ||
+             state == PlayerState.Fall))
+        {
+            invisiable = true;
+            Invoke("InvisiableOff", 1f);
+            //StartCoroutine(E_InvisiableOff())
+            rb.velocity = Vector2.zero;
+            StartCoroutine(E_Knockback(forceVec,time));
+        }
+    }
+
+    IEnumerator E_Knockback(Vector2 forceVec, float time)
+    {
+        float timer = time;
+        while (timer > 0)
+        {
+            rb.AddForce(forceVec, ForceMode2D.Force);
+            timer -= Time.deltaTime;
+            yield return null; // 프레임 대기
+        }
+    }
+
+    /*IEnumerator E_InvisiableOff()
+    {
+        yield return new WaitForSeconds(1f);
+        invisiable = false;
+    }*/
+
+    void InvisiableOff()
+    {
+        invisiable = false;
+    }
+
     private void OnDrawGizmos()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -442,7 +583,6 @@ public class PlayerController : MonoBehaviour
         Vector2 tmpCenter = new Vector2(attackBoxCastCenter.x * direction, attackBoxCastCenter.y) + rb.position;
         Gizmos.DrawWireCube(tmpCenter, attackBoxCastSize);
     }
-
 
     public enum IdleState
     {
@@ -496,6 +636,24 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish,
     }
+
+    public enum HurtState
+    {
+        Idle,
+        Prepare,
+        Casting,
+        OnAction,
+        Finish,
+    }
+
+    public enum DieState
+    {
+        Idle,
+        Prepare,
+        Casting,
+        OnAction,
+        Finish,
+    }
 }
 
 public enum PlayerState
@@ -506,4 +664,6 @@ public enum PlayerState
     Fall,
     Attack,
     DashAttack,
+    Hurt,
+    Die,
 }

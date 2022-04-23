@@ -54,8 +54,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\PlayerController.cs" />
-    <Compile Include="Assets\02.Scripts\GroundDetector.cs" />
     <Compile Include="Assets\02.Scripts\EnemyController.cs" />
+    <Compile Include="Assets\02.Scripts\GroundDetector.cs" />
+    <Compile Include="Assets\02.Scripts\Player.cs" />
+    <Compile Include="Assets\02.Scripts\EnemyUI.cs" />
+    <Compile Include="Assets\02.Scripts\PlayerUI.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
