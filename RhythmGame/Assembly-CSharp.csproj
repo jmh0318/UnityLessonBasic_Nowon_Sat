@@ -54,11 +54,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\NoteData.cs" />
-    <Compile Include="Assets\02.Scripts\SongData.cs" />
-    <Compile Include="Assets\02.Scripts\NotesMaker.cs" />
     <Compile Include="Assets\02.Scripts\SongSelector.cs" />
-    <Compile Include="Assets\02.Scripts\SongSelectButton.cs" />
+    <Compile Include="Assets\02.Scripts\NotesMaker.cs" />
     <Compile Include="Assets\02.Scripts\SceneMover.cs" />
+    <Compile Include="Assets\02.Scripts\SongSelectButton.cs" />
+    <Compile Include="Assets\02.Scripts\SongData.cs" />
+    <Compile Include="Assets\02.Scripts\Note.cs" />
+    <Compile Include="Assets\02.Scripts\NoteHitter.cs" />
+    <Compile Include="Assets\02.Scripts\HitJudgeInfo.cs" />
+    <Compile Include="Assets\02.Scripts\NoteSpawner.cs" />
+    <Compile Include="Assets\02.Scripts\NoteManager.cs" />
+    <Compile Include="Assets\02.Scripts\GamePlay.cs" />
+    <Compile Include="Assets\02.Scripts\NoteAssets.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

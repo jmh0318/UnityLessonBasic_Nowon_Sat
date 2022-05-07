@@ -19,4 +19,12 @@ public class NoteData
 {
     public float time; // 뮤직비디오와 
     public KeyCode keyCode; //
+    public float speed;
+}
+
+public enum NoteType
+{
+    None,
+    Down,
+    Press
 }
