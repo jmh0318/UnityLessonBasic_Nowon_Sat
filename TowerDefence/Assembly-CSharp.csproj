@@ -53,9 +53,21 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\02.Scripts\WayPoints.cs" />
-    <Compile Include="Assets\02.Scripts\EnemyMovement.cs" />
-    <Compile Include="Assets\02.Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\02.Scripts\Stage\EnemySpawner.cs" />
+    <Compile Include="Assets\02.Scripts\Stage\WayPoints.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\02.Scripts\Stage\StageInfo.cs" />
+    <Compile Include="Assets\02.Scripts\Stage\LevelInfoAssets.cs" />
+    <Compile Include="Assets\02.Scripts\Stage\LevelInfo.cs" />
+    <Compile Include="Assets\02.Scripts\Map\Node.cs" />
+    <Compile Include="Assets\02.Scripts\Tower\Tower.cs" />
+    <Compile Include="Assets\02.Scripts\Tower\TowerInfo.cs" />
+    <Compile Include="Assets\02.Scripts\Tower\Tower_MachineGun.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\02.Scripts\UI\TowerSelectButton.cs" />
+    <Compile Include="Assets\02.Scripts\UI\TowerHandler.cs" />
+    <Compile Include="Assets\02.Scripts\UI\PreviewTowerAssets.cs" />
+    <Compile Include="Assets\02.Scripts\UI\PreivewTower.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
