@@ -16,6 +16,15 @@ public class LevelInfoAssets : MonoBehaviour
     }
 
     public List<LevelInfo> levelInfos = new List<LevelInfo>();
+    /// <summary>
+    /// 레벨 정보 반환
+    /// </summary>
+    /// <param name="level"> 가져오고 싶은 레벨 정보의 레벨 </param>
+    /// <returns></returns>
+    public static LevelInfo GetLevelInfo(int level)
+    {
+        return instance.levelInfos.Find(x => x.level == level);
+    }
 
     /// <summary>
     /// 특징 레벨의 특징 스테이지 정보를 반환함 
