@@ -54,6 +54,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\ModelAnimationTest.cs" />
+    <Compile Include="Assets\02.Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\02.Scripts\PlayerStateMachine.cs" />
+    <Compile Include="Assets\02.Scripts\PlayerStateMachine_Jump.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
